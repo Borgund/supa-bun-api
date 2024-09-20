@@ -1,15 +1,29 @@
 {
-  "name": "bun-elysia-api",
-  "version": "1.0.50",
+  "name": "bun-elysia-store-api",
+  "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "drizzle:generate": "bunx drizzle-kit generate",
+    "drizzle:migrate": "bunx drizzle-kit migrate",
+    "drizzle:push": "bunx drizzle-kit push",
+    "start": "bun run src/index.ts",
+    "build": "bun build src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@bogeychan/elysia-logger": "^0.1.2",
+    "@elysiajs/cors": "^1.1.1",
+    "@lucia-auth/adapter-drizzle": "^1.1.0",
+    "bun": "^1.1.29",
+    "drizzle-orm": "^0.33.0",
+    "drizzle-typebox": "^0.1.1",
+    "elysia": "latest",
+    "postgres": "^3.4.4"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@elysiajs/swagger": "^1.1.1",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.24.2"
   },
   "module": "src/index.js"
 }
